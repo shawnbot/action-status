@@ -9,12 +9,6 @@ action "install" {
 }
 
 action "test" {
-  uses = "actions/npm@master"
-  runs = ["cli.js"]
-  args = [
-    "--context", "foo",
-    "--state", "success",
-    "--desc", "'hello, world!'",
-    "--url", "https://example.com",
-  ]
+  uses = "docker://node:10-slim"
+  runs = "cli.js --context foo --state success --desc 'hello, world!' --url https://example.com"
 }
