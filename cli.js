@@ -25,7 +25,7 @@ const yargs = require('yargs')
   .option('description', {
     describe: 'A short description of your check',
     type: 'string',
-    alias: 'd'
+    alias: ['desc', 'd']
   })
   .option('url', {
     desscribe: 'The target URL of the "Details" link in your check',
@@ -47,6 +47,7 @@ if (props.help) {
     const json = readFileSync(props.json, 'utf8')
     Object.assign(props, JSON.parse(json))
   }
+  // console.dir(props)
   createStatus(props)
     .then(res => {
       console.log('status created!', res)

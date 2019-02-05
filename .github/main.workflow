@@ -10,5 +10,5 @@ action "install" {
 
 action "test" {
   uses = "docker://node:10-slim"
-  runs = "cli.js --context foo --state success --desc 'hello, world!' --url https://example.com"
+  runs = "node cli.js --context foo --state success --desc 'hello, world!' --url https://example.com"
 }
