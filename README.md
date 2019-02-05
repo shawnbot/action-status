@@ -1,6 +1,15 @@
 # action-status
 `action-status` makes it easy to create [check statuses] in [GitHub Actions].
 
+## Why?
+Currently, each action in a GitHub Actions workflow has its status set automatically, and you can't change anything useful about the status (such as its short textual description or "Details" link URL) because it'll be overwritten when the action is resolved in the workflow. `action-status` makes it easy to create separate status checks with a unique name that can include more useful information, for instance:
+
+* A short description noting why the action succeeded or failed;
+* Intentionally "pending" statuses that indicate things to be fixed in a pull request before it can be merged, a la [Semantic Pull Requests](https://github.com/probot/semantic-pull-requests);
+* Point directly to relevant URLs from the "Details" link, such as site deployments;
+* Report code coverage with ASCII characters;
+* And so on!
+
 ## Usage
 There are three different ways to use it:
 
