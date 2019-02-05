@@ -2,6 +2,7 @@
   "name": "action-status",
   "version": "0.1.0",
   "description": "Easily create commit statuses from GitHub Actions",
+  "repository": "shawnbot/action-status",
   "keywords": [
     "github",
     "actions",
