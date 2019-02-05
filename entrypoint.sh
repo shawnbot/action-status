@@ -1,2 +1,2 @@
 #!/bin/sh
-sh -c "./cli.js $*"
+sh -c "/action-status/cli.js $*"

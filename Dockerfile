@@ -6,5 +6,5 @@ COPY . .
 
 RUN npm install --production
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/action-status/entrypoint.sh"]
 CMD ["--help"]
