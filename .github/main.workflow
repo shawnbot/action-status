@@ -9,14 +9,12 @@ action "install" {
 }
 
 action "test" {
-  needs = ["install"]
-  uses = "docker://node:10-slim"
-  runs = ["./cli.js"]
+  uses = "./"
   args = [
-    "--context", "test/status",
-    "--state", "success",
-    "--desc", "hello, world!",
-    "--url", "https://example.com"
+    "--context=test/status",
+    "--state=success",
+    "--desc='hello, world!'",
+    "--url=https://example.com"
   ]
   secrets = ["GITHUB_TOKEN"]
 }
