@@ -2,7 +2,7 @@ workflow "test it out" {
   on = "push"
   resolves = [
     "test",
-    "debug"
+    "debug",
   ]
 }
 
@@ -19,5 +19,6 @@ action "debug" {
 action "test" {
   needs = ["install"]
   uses = "docker://node:10-slim"
-  runs = "node ./cli.js --context foo --state success --desc 'hello, world!' --url https://example.com"
+  runs = "node ./cli.js --context test/status --state success --desc 'hello, world!' --url https://example.com"
+  secrets = ["GITHUB_TOKEN"]
 }
