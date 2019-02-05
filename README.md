@@ -56,4 +56,4 @@ action "status" {
 [check statuses]: https://help.github.com/articles/about-status-checks/
 [github actions]: https://github.com/features/actions
 [run-scripts]: https://docs.npmjs.com/misc/scripts
-[npx]: 
+[npx]: https://www.npmjs.com/package/npx
