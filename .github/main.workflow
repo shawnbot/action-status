@@ -1,6 +1,9 @@
 workflow "test it out" {
   on = "push"
-  resolves = "test"
+  resolves = [
+    "test",
+    "debug"
+]
 }
 
 action "install" {
@@ -8,7 +11,11 @@ action "install" {
   args = "install"
 }
 
+action "debug" {
+  uses = "shawnbot/node-debug-action@master"
+}
+
 action "test" {
   uses = "docker://node:10-slim"
-  runs = "node cli.js --context foo --state success --desc 'hello, world!' --url https://example.com"
+  runs = "node ./cli.js --context foo --state success --desc 'hello, world!' --url https://example.com"
 }
